@@ -9,6 +9,6 @@
  */
 ?>
 
-oreore
+どうしてならないんだよぉぉぉぉぉ！
 
 <?php require '../fotter.php'; ?>
