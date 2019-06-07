@@ -10,25 +10,31 @@ namespace App\UserManagement;
 
 use App\DemesiInterface;
 
-
+#抽象クラス
 abstract class User implements DemesiInterface\user_interface
 {
 
-    //抽象クラスでこれらを実装
+    #共通処理を実装
+
+    #登録時のフラグを立てる
     public function flag()
     {
         // TODO: Implement flag() method.
     }
 
+    #登録時のメール送信機能
     public function mail()
     {
         // TODO: Implement mail() method.
     }
+
+    #ログイン処理
     public function login()
     {
         // TODO: Implement login() method.
     }
 
+    #パスワードリセット機能
     public function reset()
     {
         // TODO: Implement reset() method.
@@ -37,6 +43,7 @@ abstract class User implements DemesiInterface\user_interface
 
 //個人ユーザー
 class NormalUser extends User {
+
 
     public function getData()
     {
