@@ -16,13 +16,6 @@ interface root
     public function updateData();
 }
 
-interface user_interface extends root{
-    public function reset();
-    public function flag();
-    public function mail();
-    public function login();
-}
-
 interface card_interface extends root{
     public function getTemplate();
     public function cardDeleto();

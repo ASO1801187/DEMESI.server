@@ -12,7 +12,8 @@ use App\DemesiInterface;
 
 
 //抽象クラス
-abstract class Card implements DemesiInterface\card_interface{
+abstract class Card implements DemesiInterface\card_interface
+{
 
     #共通処理を実装
 
