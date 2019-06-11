@@ -15,10 +15,3 @@ interface root
     public function insertData();
     public function updateData();
 }
-
-interface card_interface extends root{
-    public function getTemplate();
-    public function cardDeleto();
-    public function QR();
-    public function imageGeneration();
-}

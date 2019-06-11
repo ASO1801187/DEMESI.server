@@ -8,51 +8,15 @@
 
 namespace App\UserManagement;
 
-use App\DemesiInterface;
+use function foo\func;
+use http\Env\Request;
 
+function reset(Request $request){}
+function flag(){}
+function mail(){}
+function login(){}
+function getData(){}
 
-
-
-
-//個人ユーザー
-class NormalUser implements DemesiInterface\root
-{
-
-
-    public function getData()
-    {
-        // TODO: Implement getData() method.
-    }
-
-    public function insertData()
-    {
-        // TODO: Implement insertData() method.
-    }
-
-    public function updateData()
-    {
-        // TODO: Implement updateData() method.
-    }
-
-}
-
-//企業ユーザー
-class CompanyUser implements DemesiInterface\root
-{
-
-    //抽象クラスを実装
-    public function getData()
-    {
-        // TODO: Implement getData() method.
-    }
-
-    public function insertData()
-    {
-        // TODO: Implement insertData() method.
-    }
-
-    public function updateData()
-    {
-        // TODO: Implement updateData() method.
-    }
-}
+function insertData(Request $request){}
+function updateData(){}
+function deleto(){}
