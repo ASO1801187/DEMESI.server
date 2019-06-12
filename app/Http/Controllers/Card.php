@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use function foo\func;
 use Illuminate\Http\Request;
 use Input;
 use App\UserManagement;
@@ -20,31 +19,61 @@ function user_conversion(Request $request){
 #ルートからここを呼び出す
 class Card extends Controller
 {
-    public function user_insert(){
-        $array = ['name',];                         //ここにキーを入れる
+    public function user_insert(Request $request){
+        $array = ['name',];                                           //ここにキーを入れる
         $array = [key=>$array,name=>''];            //nameはjsonの名前
-        UserManagement\insertData(user_conversion($array));
-        return ;
+        $array = user_conversion($array);
+        $array['flag'] =False;
+        $result = UserManagement\insertData($array);
+        switch ($result){
+            case 1:
+                $text = "";
+                mb_language("Japanese");
+                mb_internal_encoding("UTF-8");
+                $to = $array['mail'];
+                if (mb_send_mail($to, "DEMESIの登録確認について", $text)){
+
+                }else{
+
+                }
+
+            case 2:
+
+            case 3:
+        }
+        return;
     }
 
-    public function user_update(){
-        $array = ['name',];                         //ここにキーを入れる
-        $array = [key=>$array,name=>''];            //nameはjsonの名前
-        UserManagement\updateData(user_conversion($array));
-        return ;
+    #細かい部分を話し合うため後で決める
+    public function user_update(Request $request){
+        $array = ['name',];                                           //ここにキーを入れる
+        $array = ['key'=>$array,'name'=>''];      //nameはjsonの名前
+        return UserManagement\updateData(user_conversion($array));
     }
 
-    public function deleto_date(){
-        $array = ['name',];                         //ここにキーを入れる
-        $array = [key=>$array,name=>''];            //nameはjsonの名前
-        UserManagement\deleto(user_conversion($array));
-        return ;
+
+    public function user_deleto(Request $request){
+        $array = ['id'];                                           //ここにキーを入れる
+        $array = ['key'=>$array,'name'=>''];      //nameはjsonの名前
+        return UserManagement\deleto(user_conversion($array));
     }
 
-    public function get_date(){
-        $array = ['name',];                         //ここにキーを入れる
-        $array = [key=>$array,name=>''];            //nameはjsonの名前
-        UserManagement\getData(user_conversion($array));
-        return ;
+
+    #疑惑の関数
+    public function flag(Request $request,$id){
+        $array = [$id];                                           //ここにキーを入れる
+        $array = ['key'=>$array,'name'=>''];      //nameはjsonの名前
+        return UserManagement\deleto(user_conversion($array));
     }
+
+    function login(Request $request){
+        $array = ['name',];                                           //ここにキーを入れる
+        $array = ['key'=>$array,'name'=>''];      //nameはjsonの名前
+        return UserManagement\deleto(user_conversion($array));
+
+    }
+
+
+
+
 }

@@ -8,15 +8,19 @@
 
 namespace App\UserManagement;
 
-use function foo\func;
-use http\Env\Request;
 
-function reset(Request $request){}
+
+
+
 function flag(){}
 function mail(){}
 function login(){}
 function getData(){}
 
-function insertData(Request $request){}
+#追加系
+function insertData(Request $request){
+    return;
+}
 function updateData(){}
 function deleto(){}
+function reset(Request $request){}
