@@ -15,6 +15,7 @@ function user_conversion(Request $request){
     return $array;
 }
 
+
 #ルートからここを呼び出す
 class User extends Controller
 {
@@ -70,6 +71,11 @@ class User extends Controller
         $array = ['key'=>$array,'name'=>''];      //nameはjsonの名前
         return UserManagement\deleto(user_conversion($array));
 
+    }
+
+    function getData(Request $request){
+        $id = $request['id'];
+        return json_encode(UserManagement\getData($id));
     }
 
 }
