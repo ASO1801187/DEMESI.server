@@ -12,4 +12,5 @@
 */
 
 
-Route::post('/', 'Card@user_insert');
+Route::post('/user/new_insert', 'User@user_insert');
+Route::post('/user/deleto', 'User@');
