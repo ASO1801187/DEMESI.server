@@ -13,4 +13,4 @@
 
 
 Route::post('/user/new_insert', 'User@user_insert');
-Route::post('/user/deleto', 'User@');
+Route::post('/user/flag/{id}', 'User@flag');
